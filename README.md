@@ -6,7 +6,7 @@
 # terraform-null-smtp-mail [![Build Status](https://travis-ci.org/cloudposse/terraform-null-smtp-mail.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-null-smtp-mail) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-null-smtp-mail.svg)](https://github.com/cloudposse/terraform-null-smtp-mail/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
-Terraform Module to send emails using an SMTP server by calling an external `email` command.
+Terraform Module to send emails using an SMTP server by calling an external `emailcli` command.
 
 
 ---
