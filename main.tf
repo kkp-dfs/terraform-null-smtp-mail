@@ -3,7 +3,7 @@ locals {
 }
 
 resource "null_resource" "default" {
-  count = "${var.enabled == "true" ? 1 : 0}"
+  count = var.enabled == "true" ? 1 : 0
 
   triggers = {
     subject = "${var.subject}"
@@ -12,7 +12,7 @@ resource "null_resource" "default" {
   }
 
   provisioner "local-exec" {
-    command = "${local.command}"
+    command = local.command
 
     environment = {
       EMAIL_FROM     = "${var.from}"
