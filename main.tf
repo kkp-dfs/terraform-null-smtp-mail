@@ -24,6 +24,6 @@ resource "null_resource" "default" {
       EMAIL_PASSWORD = "${var.password}"
     }
 
-    on_failure = "fail"
+    on_failure = fail
   }
 }
