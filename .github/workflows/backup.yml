@@ -8,5 +8,4 @@ on:
 jobs:
   sync:
     uses: kkp-dfs/dime-github-actions-workflows/.github/workflows/backup-sync.yml@main
-    secrets:
-      target-token: ${{ secrets.GL_ACCESS_TOKEN }}
+    secrets: inherit
