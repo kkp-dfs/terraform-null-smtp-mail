@@ -1,9 +1,14 @@
 name: Backup code
 
 on: 
-  - push
-  - delete
-  - workflow_dispatch
+  push:
+      branches:
+        - main
+        - 'release/**'
+      tags:
+        - '**'
+  # - delete
+  workflow_dispatch:
 
 jobs:
   sync:
