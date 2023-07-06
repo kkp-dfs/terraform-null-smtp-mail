@@ -1,18 +1,4 @@
-data "template_file" "body" {
-  template = var.body
-
-  vars = var.vars
-}
-
-data "template_file" "subject" {
-  template = var.subject
-
-  vars = var.vars
-}
-
 locals {
-  body    = data.template_file.body.rendered
-  subject = data.template_file.subject.rendered
   command = "${var.mail_command} ${join(" ", var.to)}"
 }
 
@@ -28,10 +14,10 @@ resource "null_resource" "default" {
   provisioner "local-exec" {
     command = local.command
 
-    environment {
+    environment = {
       EMAIL_FROM     = var.from
-      EMAIL_SUBJECT  = local.subject
-      EMAIL_BODY     = local.body
+      EMAIL_SUBJECT  = var.subject
+      EMAIL_BODY     = var.body
       EMAIL_PORT     = var.port
       EMAIL_HOST     = var.host
       EMAIL_USERNAME = var.username
