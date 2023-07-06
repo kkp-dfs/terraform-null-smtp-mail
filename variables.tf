@@ -9,7 +9,7 @@ variable "from" {
 
 variable "to" {
   description = "Email recipients"
-  type        = list(any)
+  type        = list(string)
 }
 
 variable "subject" {
