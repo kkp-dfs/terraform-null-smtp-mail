@@ -1,0 +1,22 @@
+name: Backup code
+
+on: 
+  push:
+      branches:
+        - main
+        - master
+        - 'release/**'
+      tags:
+        - '**'
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
+      - master
+  delete:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: kkp-dfs/dime-github-actions-workflows/.github/workflows/backup-sync.yml@main
+    secrets: inherit
